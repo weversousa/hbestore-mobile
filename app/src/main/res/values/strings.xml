@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HBEStore Login</string>
+
+    <string name="string_text_view_usuario">Usuário</string>
+    <string name="string_edit_text_usuario">Digite aqui o seu nome de usuário</string>
+    <string name="string_text_view_senha">Senha</string>
+    <string name="string_edit_text_senha">Digite aqui a sua senha</string>
+    <string name="string_button_entrar">Entrar</string>
+
+</resources>

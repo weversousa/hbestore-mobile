@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_view_tela_inicial"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="40dp"
+        />
+
+
+    <TextView
+        android:id="@+id/text_view_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/string_text_view_usuario"
+        android:layout_marginHorizontal="50dp"/>
+
+
+
+    <EditText
+        android:id="@+id/edit_text_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/string_edit_text_usuario"
+        android:layout_marginHorizontal="50dp"/>
+
+    <TextView
+        android:id="@+id/text_view_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/string_text_view_senha"
+        android:layout_marginHorizontal="50dp" />
+
+    <EditText
+        android:id="@+id/edit_text_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/string_edit_text_senha"
+        android:layout_marginHorizontal="50dp"/>
+
+    <Button
+        android:id="@+id/button_entrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/string_button_entrar"
+        android:layout_marginHorizontal="50dp"
+        android:stateListAnimator="@null"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_entrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+</LinearLayout>
