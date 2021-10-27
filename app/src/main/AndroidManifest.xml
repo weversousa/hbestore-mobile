@@ -11,7 +11,9 @@
         android:theme="@style/Theme.HBEStore">
         <activity
             android:name=".TelaInicial"
-            android:exported="false" />
+            android:theme="@style/resources_style_toolbar"
+            android:exported="false"
+        />
         <activity
             android:name=".MainActivity"
             android:exported="true">
