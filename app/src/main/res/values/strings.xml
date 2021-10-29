@@ -6,5 +6,6 @@
     <string name="string_text_view_senha">Senha</string>
     <string name="string_edit_text_senha">Digite aqui a sua senha</string>
     <string name="string_button_entrar">Entrar</string>
-
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
