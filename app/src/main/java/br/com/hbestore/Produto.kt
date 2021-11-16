@@ -1,8 +1,10 @@
 package br.com.hbestore
 
-class Produto {
+import java.io.Serializable
+
+class Produto: Serializable {
     var id: Long? = null
     var nome = ""
-    var preco = ""
-    var foto = ""
+    var valor = ""
+    var url = ""
 }

@@ -1,5 +1,6 @@
 package br.com.hbestore
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -23,8 +24,8 @@ class TelaInicial : NavegationDrawerActivity()  {
     //Inicia o Action Bar
     lateinit var toggle : ActionBarDrawerToggle
 
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>? = null
+//    private var layoutManager: RecyclerView.LayoutManager? = null
+//    private var adapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +62,10 @@ class TelaInicial : NavegationDrawerActivity()  {
     }
 
     fun onClickProduto(produto: Produto){
-        Toast.makeText(this, "Clicou na disciplina ${produto.nome}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Clicou na Roupa ${produto.nome}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, ProdutoActivity::class.java)
+        intent.putExtra("produto", produto)
+        startActivity(intent)
     }
 
     override fun onResume() {
@@ -70,8 +74,14 @@ class TelaInicial : NavegationDrawerActivity()  {
     }
     var produtos = listOf<Produto>()
     fun taskProdutos(){
-        this.produtos = ProdutoService.getProduto(this)
-        recyclerView?.adapter = ProdutoAdapter(produtos){onClickProduto(it)}
+        Thread{
+            this.produtos = ProdutoService.getProduto(this)
+            runOnUiThread{
+                recyclerView?.adapter = ProdutoAdapter(produtos){
+                    onClickProduto(it)
+                }
+            }
+        }.start()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

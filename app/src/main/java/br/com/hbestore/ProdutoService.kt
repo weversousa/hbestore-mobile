@@ -7,14 +7,14 @@ import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 
 object ProdutoService {
-    val host = null
-    val TAG = null
+    val host = "https://bielanski.pythonanywhere.com"
+    val TAG = "WS_LMSApp"
 
     fun getProduto(context: Context): List<Produto>{
         var produto = mutableListOf<Produto>()
 
         //Tem que colocar a chamada da API
-        val url = "$host/..."
+        val url = "$host/ope"
         val json = HttpHelper.get(url)
 
         Log.d(TAG, json)
@@ -24,7 +24,7 @@ object ProdutoService {
     }
 
     fun salvaProduto(produto: Produto){
-        val url = "$host/..."
+        val url = "$host/ope"
         var json = HttpHelper.post(url, GsonBuilder().create().toJson(produto))
     }
 

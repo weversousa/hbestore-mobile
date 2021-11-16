@@ -44,10 +44,10 @@ class ProdutoAdapter(
         val produto = this.produto[position]
 
         holder.cardNomeProduto.text = produto.nome
-        holder.cardValorProduto.text = produto.preco
+        holder.cardValorProduto.text = produto.valor
         holder.cardProgress.visibility = View.VISIBLE
 
-        Picasso.with(context).load(produto.foto).fit().into(holder.cardImg,
+        Picasso.with(context).load(produto.url).fit().into(holder.cardImg,
                 object : com.squareup.picasso.Callback{
                     override fun onSuccess() {
                         holder.cardProgress.visibility = View.GONE
