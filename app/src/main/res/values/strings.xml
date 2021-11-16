@@ -8,4 +8,6 @@
     <string name="string_button_entrar">Entrar</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="abrir">abrir</string>
+    <string name="fechar">fechar</string>
 </resources>

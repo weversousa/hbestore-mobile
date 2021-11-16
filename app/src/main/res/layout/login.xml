@@ -9,10 +9,9 @@
         android:id="@+id/image_view_tela_inicial"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="40dp"
         />
-
 
     <TextView
         android:id="@+id/text_view_usuario"
@@ -21,15 +20,13 @@
         android:text="@string/string_text_view_usuario"
         android:layout_marginHorizontal="50dp"/>
 
-
-
     <EditText
         android:id="@+id/edit_text_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/string_edit_text_usuario"
+        android:hint="Digite seu Usuário"
         android:layout_marginHorizontal="50dp"/>
 
     <TextView
@@ -45,20 +42,27 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="@string/string_edit_text_senha"
+        android:hint="Digite sua Senha"
         android:layout_marginHorizontal="50dp"/>
 
-    <Button
-        android:id="@+id/button_entrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/string_button_entrar"
-        android:layout_marginHorizontal="50dp"
-        android:stateListAnimator="@null"/>
+    <CheckBox
+            android:text="Lembrar Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkLogin"
+            android:layout_marginHorizontal="50dp"/>
 
     <ProgressBar
         android:id="@+id/progress_bar_entrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
+
+    <Button
+            android:id="@+id/button_entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/string_button_entrar"
+            android:layout_marginHorizontal="50dp"
+            android:stateListAnimator="@null" />
 </LinearLayout>

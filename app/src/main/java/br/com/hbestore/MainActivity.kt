@@ -18,14 +18,30 @@ class MainActivity : AppCompatActivity() {
 
         image_view_tela_inicial.setImageResource(R.drawable.hb_logo)
 
+        edit_text_usuario.setText(Prefs.getString("nome_usuario"))
+        edit_text_senha.setText(Prefs.getString("senha_usuario"))
+        checkLogin.isChecked = Prefs.getBoolean("lembrar_login")
+
         // Evento click no botão da Tela de Login
         button_entrar.setOnClickListener {
+            Toast.makeText(this,"Clicou no botão de login", Toast.LENGTH_LONG).show()
 
             progress_bar_entrar.visibility = View.VISIBLE
 
             // Pegar valores dos campos input
             val usuario = edit_text_usuario.text.toString()
             val senha = edit_text_senha.text.toString()
+            val check_login = checkLogin.isChecked
+
+            if (check_login){
+                Prefs.setString("nome_usuario", usuario)
+                Prefs.setString("senha_usuario", senha)
+            }else {
+                Prefs.setString("nome_usuario", "")
+                Prefs.setString("senha_usuario", "")
+            }
+            Prefs.setBoolean("lembrar_login", check_login)
+
 
             if ((usuario == "usuario") and (senha == "senha")) {
                 // Ir para outra tela
