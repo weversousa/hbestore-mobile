@@ -5,8 +5,6 @@ import android.view.View
 import java.lang.IllegalStateException
 
 class LMSAplication() : Application() {
-
-
     override fun onCreate(){
         super.onCreate()
         appInstance = this

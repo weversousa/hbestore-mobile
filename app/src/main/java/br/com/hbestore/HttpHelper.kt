@@ -17,6 +17,11 @@ object HttpHelper {
         return getJson(request)
     }
 
+    fun delete(url: String): String {
+        val request = Request.Builder().url(url).delete().build()
+        return getJson(request)
+    }
+
     private fun getJson(request: Request): String{
         val response = client.newCall(request).execute()
         val body = response.body()

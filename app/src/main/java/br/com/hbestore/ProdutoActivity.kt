@@ -15,6 +15,14 @@ class ProdutoActivity : AppCompatActivity() {
         nomeRoupa.text = produto.nome
         valorRoupa.text = produto.valor
 
+        botaoRemove.setOnClickListener(){
+            Thread{
+                ProdutoService.removeProduto(produto)
+                runOnUiThread{
+                    finish()
+                }
+            }.start()
+        }
         //Toast.makeText(this, "${produto.nome}", Toast.LENGTH_LONG).show()
     }
 

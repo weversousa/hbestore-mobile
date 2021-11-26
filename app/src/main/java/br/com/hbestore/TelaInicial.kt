@@ -24,9 +24,6 @@ class TelaInicial : NavegationDrawerActivity()  {
     //Inicia o Action Bar
     lateinit var toggle : ActionBarDrawerToggle
 
-//    private var layoutManager: RecyclerView.LayoutManager? = null
-//    private var adapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
@@ -52,11 +49,6 @@ class TelaInicial : NavegationDrawerActivity()  {
         recyclerView?.itemAnimator = DefaultItemAnimator()
         recyclerView?.setHasFixedSize(true)
 
-//        layoutManager = LinearLayoutManager(this)
-//        recyclerView.layoutManager = layoutManager
-//        adapter = RecyclerViewAdapter()
-//        recyclerView.adapter = adapter
-
         val usuario_prefs = Prefs.getString("nome_usuario")
         Toast.makeText(this, "Nome do usuario Prefs: $usuario_prefs", Toast.LENGTH_LONG).show()
     }
@@ -80,8 +72,17 @@ class TelaInicial : NavegationDrawerActivity()  {
                 recyclerView?.adapter = ProdutoAdapter(produtos){
                     onClickProduto(it)
                 }
+                enviaNotificacoes(this.produtos.get(0))
             }
         }.start()
+    }
+
+    fun enviaNotificacoes(produto: Produto){
+        val intent = Intent(this, ProdutoActivity::class.java)
+        intent.putExtra("produto", produto)
+        NotificationUtil.create(
+            1, intent, "LMSApp",
+            "Veja as novidades - ${produto.nome} por ${produto.valor}")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

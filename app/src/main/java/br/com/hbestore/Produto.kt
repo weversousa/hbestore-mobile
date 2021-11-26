@@ -1,8 +1,13 @@
 package br.com.hbestore
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
-class Produto: Serializable {
+@Entity(tableName = "produto")
+class Produto: Serializable{
+
+    @PrimaryKey
     var id: Long? = null
     var nome = ""
     var valor = ""

@@ -24,4 +24,12 @@ object Prefs {
     fun getString(flag: String): String{
         return prefs().getString(flag, "")!!
     }
+
+    fun setStringSet(flag: String, valor: Set<String>){
+        prefs().edit().putStringSet(flag, valor).apply()
+    }
+
+    fun getStringSet(flag: String): Set<String>{
+        return prefs().getStringSet(flag, mutableSetOf<String>())!!
+    }
 }

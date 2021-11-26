@@ -13,19 +13,50 @@ object ProdutoService {
     fun getProduto(context: Context): List<Produto>{
         var produto = mutableListOf<Produto>()
 
-        //Tem que colocar a chamada da API
-        val url = "$host/ope"
-        val json = HttpHelper.get(url)
+        try {
+            var to_remove = Prefs.getString("to_remove") as MutableSet<String>
+            for (r in to_remove){
+                HttpHelper.delete("$host/ope/${r}")
+            }
+            val url = "$host/ope"
+            val json = HttpHelper.get(url)
 
-        Log.d(TAG, json)
-        produto = parseJson<MutableList<Produto>>(json)
+            Log.d(TAG, json)
+            produto = parseJson<MutableList<Produto>>(json)
 
-        return produto
+            salvaDB(produto)
+            return produto
+        }catch (e: Exception){
+            var produto = DatabaseManager.getProdutoDAO().findAll()
+
+            return produto
+        }
+    }
+
+    private fun salvaDB(produto: List<Produto>){
+        for (d in produto){
+            val existe = DatabaseManager.getProdutoDAO().getById(d.id!!)
+            if(existe == null){
+                DatabaseManager.getProdutoDAO().insert(d)
+            }
+        }
     }
 
     fun salvaProduto(produto: Produto){
         val url = "$host/ope"
         var json = HttpHelper.post(url, GsonBuilder().create().toJson(produto))
+    }
+
+    fun removeProduto(produto: Produto){
+        try {
+            HttpHelper.delete("$host/ope/${produto.id}")
+        }catch (e: java.lang.Exception){
+            var to_remove = Prefs.getStringSet("to_remove") as MutableSet<String>
+            to_remove.add(produto.id!!.toString())
+            Prefs.setStringSet("to_remove", to_remove)
+        }finally {
+            DatabaseManager.getProdutoDAO().delete(produto)
+        }
     }
 
     inline fun <reified T> parseJson(json: String): T{
