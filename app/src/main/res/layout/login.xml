@@ -8,9 +8,9 @@
     <ImageView
         android:id="@+id/image_view_tela_inicial"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
         />
 
     <TextView

@@ -7,13 +7,13 @@ import com.google.firebase.messaging.RemoteMessage
 import com.google.gson.reflect.TypeToken
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
-    override fun onNewToken(token: String?) {
+    override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.d("firebase", "Novo token: $token")
         Prefs.setString("FB_TOKEN",token!!)
     }
 
-    override fun onMessageReceived(mensagemRemota: RemoteMessage?) {
+    override fun onMessageReceived(mensagemRemota: RemoteMessage) {
         Log.d("firebase", "onMessageRecived")
 
         if (mensagemRemota?.notification != null){

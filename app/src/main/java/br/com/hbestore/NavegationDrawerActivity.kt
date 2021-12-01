@@ -41,7 +41,10 @@ open class NavegationDrawerActivity : AppCompatActivity(), NavigationView.OnNavi
                 val intent = Intent(this, CarrinhoActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_mapa -> Toast.makeText(applicationContext,"Mapas", Toast.LENGTH_SHORT).show()
+            R.id.nav_mapa ->{
+                val intent = Intent(this, MapasActivity::class.java)
+                startActivity(intent)
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

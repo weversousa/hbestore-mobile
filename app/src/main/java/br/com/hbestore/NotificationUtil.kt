@@ -24,6 +24,7 @@ object NotificationUtil {
         createChannel()
         val contexto = LMSAplication.getInstance().applicationContext
         val p = PendingIntent.getActivity(contexto, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
         val builder = NotificationCompat.Builder(contexto, CHANNEL_ID)
             .setContentIntent(p)
             .setContentTitle(titulo)

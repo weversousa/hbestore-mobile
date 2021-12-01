@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_tela_inicial.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-class TelaInicial : NavegationDrawerActivity()  {
+class TelaInicial : NavegationDrawerActivity() {
 
     //Inicia o Action Bar
     lateinit var toggle : ActionBarDrawerToggle
@@ -72,7 +72,9 @@ class TelaInicial : NavegationDrawerActivity()  {
                 recyclerView?.adapter = ProdutoAdapter(produtos){
                     onClickProduto(it)
                 }
-                enviaNotificacoes(this.produtos.get(0))
+//                if (this.produtos.size > 0){
+                    enviaNotificacoes(this.produtos.get(1))
+//                }
             }
         }.start()
     }
@@ -111,8 +113,4 @@ class TelaInicial : NavegationDrawerActivity()  {
 
         return super.onOptionsItemSelected(item)
     }
-
-
-
-
 }

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             Prefs.setBoolean("lembrar_login", check_login)
 
 
-            if ((usuario == "usuario") and (senha == "senha")) {
+            if ((usuario == "usuario") and (senha == "impacta")) {
                 // Ir para outra tela
                 // this = A Activy atual
                 // TelaInicial::class.java = Referência para o SO da Activy que queremos abrir

@@ -11,13 +11,14 @@ object ProdutoService {
     val TAG = "WS_LMSApp"
 
     fun getProduto(context: Context): List<Produto>{
-        var produto = mutableListOf<Produto>()
+
 
         try {
-            var to_remove = Prefs.getString("to_remove") as MutableSet<String>
-            for (r in to_remove){
-                HttpHelper.delete("$host/ope/${r}")
-            }
+            var produto = mutableListOf<Produto>()
+//            var to_remove = Prefs.getString("to_remove") as MutableSet<String>
+//            for (r in to_remove){
+//                HttpHelper.delete("$host/ope/${r}")
+//            }
             val url = "$host/ope"
             val json = HttpHelper.get(url)
 
@@ -26,10 +27,8 @@ object ProdutoService {
 
             salvaDB(produto)
             return produto
-        }catch (e: Exception){
-            var produto = DatabaseManager.getProdutoDAO().findAll()
-
-            return produto
+        } catch (e: Exception) {
+            return DatabaseManager.getProdutoDAO().findAll()
         }
     }
 
