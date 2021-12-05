@@ -15,8 +15,18 @@
     </style>
 
     // parent, significa que ele vai herdar todas os estilos do pai definido
+
     <style name="resources_style_toolbar" parent="Theme.HBEStore">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="Theme.HBEStore.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.HBEStore.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.HBEStore.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

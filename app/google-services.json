@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "281337240511",
+    "project_id": "lmsapp-hbstore",
+    "storage_bucket": "lmsapp-hbstore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281337240511:android:c6514e6e07e962090c5f0a",
+        "android_client_info": {
+          "package_name": "br.com.hbestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281337240511-dp3k969h7ad10hgf0itesobspl29ople.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiMwnxSOz-c9H0KA-mm1A3Z43SYn-piYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281337240511-dp3k969h7ad10hgf0itesobspl29ople.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
