@@ -2,9 +2,9 @@ package br.com.hbestore
 
 import android.content.Intent
 import android.util.Log
+import br.com.hbestore.Activity.ProdutoActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import com.google.gson.reflect.TypeToken
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
     override fun onNewToken(token: String) {

@@ -1,21 +1,17 @@
-package br.com.hbestore
+package br.com.hbestore.Activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
+import android.util.Log
 import android.view.*
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.navigation.NavigationBarItemView
-import com.google.android.material.navigation.NavigationView
+import br.com.hbestore.*
+import br.com.hbestore.Adapter.ProdutoAdapter
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
+import kotlinx.android.synthetic.main.cardview_roupas.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
@@ -60,6 +56,13 @@ class TelaInicial : NavegationDrawerActivity() {
         startActivity(intent)
     }
 
+    fun onClickItemCarrinho(produto: Produto){
+        Toast.makeText(this, "Clicou na Roupa ${produto.nome}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, CarrinhoActivity::class.java)
+        intent.putExtra("produto", produto)
+        startActivity(intent)
+    }
+
     override fun onResume() {
         super.onResume()
         taskProdutos()
@@ -72,9 +75,8 @@ class TelaInicial : NavegationDrawerActivity() {
                 recyclerView?.adapter = ProdutoAdapter(produtos){
                     onClickProduto(it)
                 }
-//                if (this.produtos.size > 0){
-                    enviaNotificacoes(this.produtos.get(1))
-//                }
+
+                enviaNotificacoes(this.produtos.get(1))
             }
         }.start()
     }
@@ -84,13 +86,14 @@ class TelaInicial : NavegationDrawerActivity() {
         intent.putExtra("produto", produto)
         NotificationUtil.create(
             1, intent, "LMSApp",
-            "Veja as novidades - ${produto.nome} por ${produto.valor}")
+            "Veja as novidades - ${produto.nome} por ${produto.valor}"
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_tela_inicial, menu)
         return super.onCreateOptionsMenu(menu)
-        }
+    }
 
     // Função que captura cliques na barra de Menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -1,13 +1,9 @@
-package br.com.hbestore
+package br.com.hbestore.Activity
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import br.com.hbestore.databinding.ActivityMapasBinding
+import br.com.hbestore.MapaFragment
+import br.com.hbestore.R
 
 class MapasActivity : AppCompatActivity() {
 

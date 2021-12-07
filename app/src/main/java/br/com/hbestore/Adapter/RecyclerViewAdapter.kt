@@ -1,4 +1,4 @@
-package br.com.hbestore
+package br.com.hbestore.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import br.com.hbestore.R
 
 class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     private val itemTitle = arrayOf("Conjunto de Ropas Femininas-Verão", "Conjunto de Ropas Femininas-Verão Floral", "Conjunto de Ropas Femininas-Inverno")

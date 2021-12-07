@@ -1,4 +1,4 @@
-package br.com.hbestore
+package br.com.hbestore.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,8 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
+import br.com.hbestore.Prefs
+import br.com.hbestore.R
 import kotlinx.android.synthetic.main.login.*
 
 class MainActivity : AppCompatActivity() {

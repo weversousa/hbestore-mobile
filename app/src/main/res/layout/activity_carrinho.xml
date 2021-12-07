@@ -13,6 +13,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
         <include layout="@layout/toolbar"/>
+        <include layout="@layout/layout_carrinho_produtos" />
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

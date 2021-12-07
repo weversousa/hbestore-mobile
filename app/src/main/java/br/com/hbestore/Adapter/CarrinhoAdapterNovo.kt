@@ -1,4 +1,4 @@
-package br.com.hbestore
+package br.com.hbestore.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +8,14 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.hbestore.Produto
+import br.com.hbestore.R
 import com.squareup.picasso.Picasso
 
-class ProdutoAdapter(
+class CarrinhoAdapterNovo(
     val produto: List<Produto>,
     val onClick: (Produto) -> Unit
-    ): RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder>()
+    ): RecyclerView.Adapter<CarrinhoAdapterNovo.ProdutoViewHolder>()
 {
     class ProdutoViewHolder(view: View): RecyclerView.ViewHolder(view){
         val cardNomeProduto: TextView
